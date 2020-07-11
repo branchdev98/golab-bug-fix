@@ -1,0 +1,7 @@
+<ion-tabs>
+  <ion-tab [root]="tab1Root" tabTitle="{{ 'tabs.home' | translate }}" tabIcon="home" (ionSelect)="currentTab('home')"></ion-tab>
+  <ion-tab [root]="tab2Root" tabTitle="{{ 'tabs.messages' | translate }}" tabIcon="text" [tabBadge]="this._iframeService.countMessages" tabBadgeStyle="danger" (ionSelect)="currentTab('messages')"></ion-tab>
+  <ion-tab [root]="tab3Root" tabTitle="{{ 'tabs.notifications' | translate }}" tabIcon="notifications" [tabBadge]="this._iframeService.countNotifications" tabBadgeStyle="danger" (ionSelect)="currentTab('notifications')"></ion-tab>
+  <ion-tab [root]="tab4Root" tabTitle="{{ 'tabs.account' | translate }}" tabIcon="person" (ionSelect)="currentTab('account')"></ion-tab>
+  <ion-tab [root]="tab5Root" tabTitle="{{ 'tabs.more' | translate }}" tabIcon="list" (ionSelect)="currentTab('list')"></ion-tab>
+</ion-tabs>

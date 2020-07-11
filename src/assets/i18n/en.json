@@ -1,0 +1,68 @@
+{
+	"alert": {
+		"button": {
+			"ok": "OK"
+		}
+	},
+	"error": {
+		"internetconnection": "Please check your internet connection."
+	},
+	"forgot": {
+		"button": {
+			"login": "Back to Login",
+			"submit": "Reset Password"
+		},
+		"label": {
+			"username": "Username / Email"
+		},
+		"title": "Forgot Password"
+	},
+	"login": {
+		"button": {
+			"facebook": "Login with Facebook",
+			"forgot": "Forgot Password?",
+			"google": "Login with Google",
+			"register": "Register",
+			"skip": "Skip",
+			"submit": "Login"
+		},
+		"label": {
+			"password": "Password",
+			"username": "Username / Email"
+		},
+		"separator": "OR",
+		"title": "Login"
+	},
+	"more": {
+		"button": {
+			"logout": "Logout"
+		}
+	},
+	"register": {
+		"button": {
+			"login": "Login",
+			"submit": "Register"
+		},
+		"label": {
+			"buyer": "Buyer",
+			"company": "Company",
+			"email": "Email",
+			"iagree": "I have read and I agree with the",
+			"password": "Password",
+			"password2": "Confirm Password",
+			"phone": "Phone",
+			"seller": "Seller",
+			"tos": "Terms of Service",
+			"username": "Username",
+			"usertype": "User Type"
+		},
+		"title": "Register"
+	},
+	"tabs": {
+		"account": "My Account",
+		"home": "Home",
+		"messages": "Messages",
+		"more": "More",
+		"notifications": "Notifications"
+	}
+}

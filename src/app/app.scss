@@ -1,0 +1,222 @@
+// http://ionicframework.com/docs/theming/
+
+
+// App Global Sass
+// --------------------------------------------------
+// Put style rules here that you want to apply globally. These
+// styles are for the entire app and not just one component.
+// Additionally, this file can be also used as an entry point
+// to import other Sass files to be included in the output CSS.
+//
+// Shared Sass variables, which can be used to adjust Ionic's
+// default Sass variables, belong in "theme/variables.scss".
+//
+// To declare rules for a specific mode, create a child rule
+// for the .md, .ios, or .wp mode classes. The mode class is
+// automatically applied to the <body> element in the app.
+
+@import '../theme/vars';
+
+/* Toasts */
+
+.toast-success {
+
+	.toast-wrapper {
+		background-color: $green-light;
+	}
+}
+
+.toast-danger {
+
+	.toast-wrapper {
+		background-color: $red;
+	}
+}
+
+.toast-info {
+
+	.toast-wrapper {
+		background-color: $blue;
+	}
+}
+
+.jst-menu-left {
+
+	ion-list {
+
+		ion-list {
+			margin: 0 0 0 20px;
+
+			&.list-ios {
+				margin-top: -1px;
+			}
+
+			button {
+				min-height: 35px;
+			}
+
+			ion-label {
+				margin: 5px 5px 5px 0;
+				font-size: 14px;
+			}
+		}
+	}
+}
+
+.scroll-content {
+	padding: 0!important;
+
+	#viewSite {
+		width: 100%;
+		height: 100%;
+	}
+
+	.overiframe {
+		background: #fff;
+		position: fixed;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		display: flex;
+		justify-content: center;
+		padding-top: 100px;
+		z-index: 9999;
+	}
+}
+
+.no-scroll {
+
+	.scroll-content {
+		overflow: hidden!important;
+	}
+}
+
+.title-md {
+	position: absolute;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+button.bar-button {
+	margin-right: 10px!important;
+}
+
+.inline-text {
+	vertical-align: text-top;
+	height: 1.3em;
+	padding: 0;
+	margin: 0;
+}
+
+.inline-button-link {
+	vertical-align: text-top;
+	height: 1.3em;
+	padding: 0;
+	margin: 0;
+	border-radius: 0;
+	border-bottom: 1px solid;
+	text-transform: none;
+	font-size: 1em;
+}
+
+.display-none {
+	display: none;
+}
+
+.ng-progress-bar {
+	top: auto !important;
+}
+
+.fake-items {
+	.short-bar, .medium-bar, .long-bar, .full-bar, .square, .circle, .card {
+		opacity: 0.5;
+		height: 1em;
+		margin-top: 0px;
+		margin-bottom: 0.5em;
+		background: linear-gradient(to right, #eeeeee 8%, #dddddd 18%, #eeeeee 33%);
+		background-size: 800px 104px;
+		animation-duration: 1.5s;
+		animation-fill-mode: forwards;
+		animation-iteration-count: infinite;
+		animation-timing-function: linear;
+		animation-name: placeHolderShimmer;
+	}
+
+	@keyframes placeHolderShimmer {
+		0%{ background-position: -468px 0; }
+		100%{ background-position: 468px 0; }
+	}
+
+	.flex {
+		display: flex;
+	}
+
+	.flex > div {
+		flex: 1 0 auto;
+	}
+
+	.flex > .square, .flex > .circle {
+		flex: 0 1 auto;
+	}
+
+	.outer-container {
+		margin: 0;
+		padding: 1em;
+		background: #f7f8f9;
+	}
+
+	.outer-container + .outer-container {
+		padding-top: 0;
+	}
+
+	.inner-container {
+		background: #ffffff;
+		margin: 0;
+		padding: 1.3em;
+	}
+
+	.separated + .separated {
+		border-top: 1px solid rgba(34,36,38,0.10);
+	}
+
+	.square, .circle {
+		width: 35px;
+		height: 35px;
+		margin: 0 1.3em 0 0;
+	}
+
+	.circle {
+		width: 45px;
+		height: 45px;
+		border-radius: 50%;
+	}
+
+	.short-bar {
+		width: 35%;
+	}
+
+	.medium-bar {
+		width: 50%;
+	}
+
+	.long-bar {
+		width: 75%;
+	}
+
+	.full-bar {
+		width: 100%;
+	}
+
+	.title-bar {
+		margin: 5px 0;
+		height: 2em;
+	}
+
+	.card {
+		width: 100%;
+		height: 250px;
+	}
+}

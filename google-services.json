@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "247701737913",
+    "firebase_url": "https://kolab-e6fd6.firebaseio.com",
+    "project_id": "kolab-e6fd6",
+    "storage_bucket": "kolab-e6fd6.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:247701737913:android:bb840554d42acec2e26668",
+        "android_client_info": {
+          "package_name": "id.kolab.app"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "247701737913-9koglotv1kooebl3roa0suojhr3q69j3.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDhUR2BVr8ltnbQhUbhVJxaRK4eBvrlUIo"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "247701737913-9koglotv1kooebl3roa0suojhr3q69j3.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "247701737913-46ukudhjoh2d9psg36psv0559i7onio7.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "id.kolab.app"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

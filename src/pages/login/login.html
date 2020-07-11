@@ -1,0 +1,88 @@
+<ion-content padding text-center>
+	<img alt="logo" src="assets/imgs/logo.png" class="logo-login">
+	<div padding>
+		<form novalidate #loginF="ngForm" (ngSubmit)="!resetForm ? login(loginF) : reset(loginF)" padding *ngIf="!registerForm">
+			<h3>{{ !resetForm ? ( 'login.title' | translate ) : ( 'forgot.title' | translate ) }}</h3>
+			<ion-list>
+				<ion-item>
+					<ion-label floating>{{ !resetForm ? ( 'login.label.username' | translate ) : ( 'forgot.label.username' | translate ) }}</ion-label>
+					<ion-input type="email" ngModel name="username" required></ion-input>
+				</ion-item>
+				<ion-item *ngIf="!resetForm">
+					<ion-label floating>{{ 'login.label.password' | translate }}</ion-label>
+					<ion-input type="password" ngModel name="password" required></ion-input>
+				</ion-item>
+			</ion-list>
+			<button ion-button block [disabled]="!loginF.valid">{{ !resetForm ? ( 'login.button.submit' | translate ) : ( 'forgot.button.submit' | translate ) }}</button>
+		</form>
+		<form novalidate #registerF="ngForm" (ngSubmit)="register(registerF)" padding *ngIf="registerForm">
+			<h3>{{ 'register.title' | translate }}</h3>
+			<ion-list>
+				<ion-item>
+					<ion-label floating>{{ 'register.label.username' | translate }}</ion-label>
+					<ion-input type="email" ngModel name="username" required></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label floating>{{ 'register.label.email' | translate }}</ion-label>
+					<ion-input type="email" ngModel name="email" required></ion-input>
+				</ion-item>
+				<ion-item *ngIf="registerExtras?.phone?.enabled">
+					<ion-label floating>{{ 'register.label.phone' | translate }}</ion-label>
+					<ion-input type="tel" ngModel name="phone"></ion-input>
+				</ion-item>
+				<ion-item *ngIf="registerExtras?.user_type?.enabled">
+					<ion-label floating>{{ 'register.label.usertype' | translate }}</ion-label>
+					<ion-select ngModel name="user_type">
+						<ion-option value="buyer">{{ 'register.label.buyer' | translate }}</ion-option>
+						<ion-option value="seller">{{ 'register.label.seller' | translate }}</ion-option>
+					</ion-select>
+				</ion-item>
+				<ion-item>
+					<ion-label floating>{{ 'register.label.password' | translate }}</ion-label>
+					<ion-input type="password" ngModel name="password" required></ion-input>
+				</ion-item>
+				<ion-item>
+					<ion-label floating>{{ 'register.label.password2' | translate }}</ion-label>
+					<ion-input type="password" ngModel name="password2" required></ion-input>
+				</ion-item>
+				<ion-item *ngIf="registerExtras?.company?.enabled">
+					<ion-label floating>{{ 'register.label.company' | translate }}</ion-label>
+					<ion-input type="text" ngModel name="company"></ion-input>
+				</ion-item>
+				<ion-item *ngIf="registerExtras?.tos?.enabled">
+					<ion-label><span class="inline-text">{{ 'register.label.iagree' | translate }}</span> <span ion-button tappable clear class="inline-button-link" (click)="_iframeService.initIAB(registerExtras?.tos?.link)">{{ 'register.label.tos' | translate }}</span><span class="inline-text">.</span></ion-label>
+					<ion-checkbox ngModel name="tos"></ion-checkbox>
+				</ion-item>
+			</ion-list>
+			<button ion-button block [disabled]="!registerF.valid">{{ 'register.button.submit' | translate }}</button>
+		</form>
+		<ion-grid>
+			<ion-row>
+				<ion-col col-4 text-left>
+					<button ion-button clear color="secondary" (click)="switchRegisterForm()">{{ !registerForm ? ( 'login.button.register' | translate ) : ( 'register.button.login' | translate ) }}</button>
+				</ion-col>
+				<ion-col col-8 text-right *ngIf="!registerForm">
+					<button ion-button clear color="dark" (click)="switchResetForm()">{{ !resetForm ? ( 'login.button.forgot' | translate ) : ( 'forgot.button.login' | translate ) }}</button>
+				</ion-col>
+			</ion-row>
+			<ion-row *ngIf="!(resetForm && !registerForm) && (registerExtras?.facebook?.enabled || registerExtras?.google?.enabled)">
+				<ion-col col-12 text-center>
+					<h6>{{ 'login.separator' | translate }}</h6>
+				</ion-col>
+				<ion-col col-12 *ngIf="registerExtras?.facebook?.enabled">
+					<button ion-button color="facebook" block (click)="fbLogin()">{{ 'login.button.facebook' | translate }}</button>
+				</ion-col>
+				<ion-col col-12 *ngIf="registerExtras?.google?.enabled">
+					<button ion-button color="google" block (click)="gpLogin()">{{ 'login.button.google' | translate }}</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+		<ion-grid>
+			<ion-row>
+				<ion-col col-12 text-right>
+					<button ion-button clear color="dark" (click)="skipAuth()">{{ 'login.button.skip' | translate }}</button>
+				</ion-col>
+			</ion-row>
+		</ion-grid>
+	</div>
+</ion-content>

@@ -1,0 +1,44 @@
+<ion-header>
+	<ion-navbar>
+		<ion-buttons left *ngIf="this._iframeService.iframeHistoryMessages.length">
+			<button ion-button icon-only (click)="this._iframeService.iframeHistoryBack()">
+				<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title text-center>
+			<img alt="logo" src="assets/imgs/logo.png" class="logo-login"  height="34">
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding [class.no-scroll]="webShow">
+	<ng-progress #progressBar></ng-progress>
+	<div class="overiframe" *ngIf="!webShow">
+		<p>{{ 'error.internetconnection' | translate }}</p>
+	</div>
+
+	<div class="fake-items">
+		<div class="outer-container flex">
+			<div class="square"></div>
+			<div class="medium-bar title-bar"></div>
+		</div>
+		<div class="outer-container">
+			<div class="inner-container flex">
+				<div class="square"></div>
+				<div class="square"></div>
+			</div>
+		</div>
+		<div class="outer-container">
+			<div *ngFor="let fake of fiveItems" class="inner-container separated flex">
+				<div class="circle"></div>
+				<div>
+					<div class="medium-bar"></div>
+					<div class="short-bar"></div>
+					<div class="long-bar"></div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<iframe [src]="iframeSrc" frameborder="0" scrolling="no" allowfullscreen id="viewSite" class="real-items" (load)="progressBarComplete()"></iframe>
+</ion-content>

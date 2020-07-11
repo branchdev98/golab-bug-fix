@@ -1,0 +1,68 @@
+{
+	"alert": {
+		"button": {
+			"ok": ""
+		}
+	},
+	"error": {
+		"internetconnection": ""
+	},
+	"forgot": {
+		"button": {
+			"login": "",
+			"submit": ""
+		},
+		"label": {
+			"username": ""
+		},
+		"title": ""
+	},
+	"login": {
+		"button": {
+			"facebook": "",
+			"forgot": "",
+			"google": "",
+			"register": "",
+			"skip": "",
+			"submit": ""
+		},
+		"label": {
+			"password": "",
+			"username": ""
+		},
+		"separator": "",
+		"title": ""
+	},
+	"more": {
+		"button": {
+			"logout": ""
+		}
+	},
+	"register": {
+		"button": {
+			"login": "",
+			"submit": ""
+		},
+		"label": {
+			"buyer": "",
+			"company": "",
+			"email": "",
+			"iagree": "",
+			"password": "",
+			"password2": "",
+			"phone": "",
+			"seller": "",
+			"tos": "",
+			"username": "",
+			"usertype": ""
+		},
+		"title": ""
+	},
+	"tabs": {
+		"account": "",
+		"home": "",
+		"messages": "",
+		"more": "",
+		"notifications": ""
+	}
+}

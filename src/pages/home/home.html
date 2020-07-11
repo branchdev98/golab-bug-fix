@@ -1,0 +1,37 @@
+<ion-header>
+	<ion-navbar>
+		<ion-buttons left *ngIf="this._iframeService.iframeHistoryHome.length">
+			<button ion-button icon-only (click)="this._iframeService.iframeHistoryBack()">
+				<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title text-center>
+			<img alt="logo" src="assets/imgs/logo.png" class="logo-login"  height="34">
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding [class.no-scroll]="webShow">
+	<ng-progress #progressBar></ng-progress>
+	<div class="overiframe" *ngIf="!webShow">
+		<p>{{ 'error.internetconnection' | translate }}</p>
+	</div>
+
+	<div class="fake-items">
+		<div class="inner-container">
+			<div class="card"></div>
+			<div class="long-bar title-bar"></div>
+			<div class="medium-bar title-bar"></div>
+		</div>
+		<div class="inner-container">
+			<div class="full-bar title-bar"></div>
+		</div>
+		<div class="inner-container">
+			<div class="card"></div>
+			<div class="long-bar title-bar"></div>
+			<div class="medium-bar title-bar"></div>
+		</div>
+	</div>
+
+	<iframe [src]="iframeSrc" frameborder="0" scrolling="no" allowfullscreen id="viewSite" class="real-items" (load)="progressBarComplete()"></iframe>
+</ion-content>

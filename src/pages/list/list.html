@@ -1,0 +1,60 @@
+<ion-header>
+	<ion-navbar>
+		<ion-buttons left *ngIf="this._iframeService.iframeHistoryList.length">
+			<button ion-button icon-only (click)="this._iframeService.iframeHistoryBack()">
+				<ion-icon ios="ios-arrow-back" md="md-arrow-back"></ion-icon>
+			</button>
+		</ion-buttons>
+		<ion-title text-center>
+			<img alt="logo" src="assets/imgs/logo.png" class="logo-login"  height="34">
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content padding [class.no-scroll]="!listShow">
+	<ng-progress #progressBar></ng-progress>
+
+	<div class="fake-items">
+		<div class="outer-container flex">
+			<div class="square"></div>
+			<div class="medium-bar title-bar"></div>
+		</div>
+		<div class="outer-container">
+			<div class="inner-container flex">
+				<div class="square"></div>
+				<div class="square"></div>
+			</div>
+		</div>
+		<div *ngFor="let fake of fiveItems" class="outer-container">
+			<div class="inner-container separated">
+				<div class="flex">
+					<div class="circle"></div>
+					<div>
+						<div class="full-bar"></div>
+						<div class="long-bar"></div>
+						<div class="medium-bar"></div>
+					</div>
+				</div>
+				<div class="short-bar"></div>
+				<div class="medium-bar"></div>
+				<div class="full-bar"></div>
+			</div>
+		</div>
+	</div>
+
+	<div class="overiframe" *ngIf="!webShow">
+		<p>{{ 'error.internetconnection' | translate }}</p>
+	</div>
+
+	<iframe [src]="iframeSrc" frameborder="0" scrolling="no" allowfullscreen [class.display-none]="!webShow || listShow" id="viewSite" (load)="progressBarComplete()"></iframe>
+
+	<ion-list [class.display-none]="webShow && !listShow">
+		<div *ngFor="let item of menuList">
+			<button ion-item (click)="item.url && goTo(item.url)">{{ item.label }}</button>
+			<ion-list *ngIf="!item.url">
+				<button ion-item (click)="child.url && goTo(child.url)" *ngFor="let child of item.childs">{{ child.label }}</button>
+			</ion-list>
+		</div>
+		<button ion-item (click)="logout()">{{ 'more.button.logout' | translate }}</button>
+	</ion-list>
+</ion-content>
